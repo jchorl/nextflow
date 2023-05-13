@@ -116,7 +116,7 @@ class AwsBatchExecutor extends Executor implements ExtensionPoint {
          */
         if( !(workDir instanceof S3Path) ) {
             session.abort()
-            throw new AbortOperationException("When using `$name` executor an S3 bucket must be provided as working directory using either the `-bucket-dir` or `-work-dir` command line option")
+            throw new AbortOperationException("When using `$name` executor an S3 bucket must be provided as working directory using either the `-bucket-dir` or `-work-dir` command line option, found `$workDir` (type: ${workDir.getClass().getName()})")
         }
     }
 
